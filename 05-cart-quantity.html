@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+  </head>
+  <body>
+    <h1>Quantidade no Carrinho</h1>
+
+    <button
+      onclick="
+        console.log(`Quantidade no carrinho: ${quantidadeCarrinho}`);
+    "
+    >
+      Mostrar Quantidade
+    </button>
+
+    <button onclick="
+    quantidadeCarrinho ++;
+    console.log(`Quantidade no carrinho: ${quantidadeCarrinho}`);
+    ">
+    Adicionar ao Carrinho</button>
+
+    <button onclick="
+    quantidadeCarrinho = quantidadeCarrinho + 2;
+    console.log(`Quantidade no carrinho: ${quantidadeCarrinho}`);
+">+2</button>
+
+    <button onclick="
+    quantidadeCarrinho = quantidadeCarrinho + 3;
+    console.log(`Quantidade no carrinho: ${quantidadeCarrinho}`);
+">+3</button>
+
+    <button onclick="
+    quantidadeCarrinho = 0;
+    console.log('Carrinho esvaziou');
+    console.log(`Quantidade no carrinho: ${quantidadeCarrinho}`);
+">Reset Cart</button>
+
+    <script>
+      let quantidadeCarrinho = 0;
+    </script>
+  </body>
+</html>

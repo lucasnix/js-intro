@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedra Papel e Tesoura</title>
+  </head>
+  <body>
+    <h3>Pedra Papel e Tesoura</h3>
+    <button
+      onclick="
+        const computadorMove = pegaCommputadorMove();
+    
+    let result = '';
+    if(computadorMove === 'pedra') {
+        result = 'empatou';
+    } else if (computadorMove === 'papel') {
+        result = 'perdeu!'; 
+    } else if (computadorMove === 'tesoura') {
+        result = 'vc ganhou!';
+        }
+        alert(`Voce escolheu pedra. Computador escolheu ${computadorMove}. ${result}`);
+    "
+    >
+      Pedra
+    </button>
+    
+    <button
+      onclick="
+        const computadorMove = pegaCommputadorMove();
+    
+    let result = '';
+
+    if(computadorMove === 'pedra') {
+        result = 'vc ganhou';
+    } else if (computadorMove === 'papel') {
+        result = 'empatou'; 
+    } else if (computadorMove === 'tesoura') {
+        result = 'vc perdeu';
+        }
+        alert(`Voce escolheu papel. Computador escolheu ${computadorMove}. ${result}`);
+    "
+    >
+      Papel
+    </button>
+
+    <button
+      onclick="
+        const computadorMove = pegaCommputadorMove();
+    
+    let result = '';
+
+    if(computadorMove === 'pedra') {
+        result = 'perdeu';
+    } else if (computadorMove === 'papel') {
+        result = 'vc ganhou'; 
+    } else if (computadorMove === 'tesoura') {
+        result = 'empatou';
+        }
+        alert(`Voce escolheu tesoura. Computador escolheu ${computadorMove}. ${result}`);
+    "
+    >
+      Tesoura
+    </button>
+
+    <script>
+      //primmeiro descobrir o que tem que fazer depois transformar em codigo
+      function pegaCommputadorMove() {
+        const numeroAleatorio = Math.random();
+        let computadorMove = "";
+        if (numeroAleatorio >= 0 && numeroAleatorio < 1 / 3) {
+          computadorMove = "pedra";
+        } else if (numeroAleatorio >= 1 / 3 && numeroAleatorio < 2 / 3) {
+          computadorMove = "papel";
+        } else if (numeroAleatorio >= 2 / 3 && numeroAleatorio < 1) {
+          computadorMove = "tesoura";
+        }
+
+        return computadorMove;
+      }
+    </script>
+  </body>
+</html>
