@@ -11,11 +11,17 @@
     <button onclick="jogarGame('pedra');">Pedra</button>
     <button onclick="jogarGame('papel');">Papel</button>
     <button onclick="jogarGame('tesoura');">Tesoura</button>
+
+    <p class="js-resultado"></p>
+    <p class="js-movimentos"></p>
+    <p class="js-placar"></p>
+
     <button onclick="
       placar.ganhos = 0; 
       placar.perdas = 0; 
       placar.empates = 0;
-      localStorage.removeItem('placar')">
+      localStorage.removeItem('placar')
+      updatePlacarElement();">
       Resetar Placar </button>
 
     <script>
@@ -24,6 +30,8 @@
           perdas: 0,
           empates: 0
         };
+
+        updatePlacarElement();
         
 /* o de cima é um atalho para utilizar esse codigo de baixo.
       if (!placar) {
@@ -72,12 +80,22 @@
         } else if (result === 'Empatou!') {
           placar.empates += 1;
         }
-        
 
         localStorage.setItem('placar', JSON.stringify (placar));
 
-        alert(`Voce escolheu ${movimentoJogador}. Computador escolheu ${computadorMove}. ${result}
-ganhos: ${placar.ganhos}, perdas: ${placar.perdas}, empates: ${placar.empates}`);
+        updatePlacarElement();
+
+        document.querySelector('.js-resultado')
+        .innerHTML = result;
+
+        document.querySelector('.js-movimentos')
+        .innerHTML = `Voce escolheu: ${movimentoJogador} - Computador escolheu: ${computadorMove}`; 
+
+      }
+
+      function updatePlacarElement(){
+        document.querySelector('.js-placar')
+        .innerHTML = `ganhos: ${placar.ganhos}, perdas: ${placar.perdas}, empates: ${placar.empates}`;
       }
 
       function pegaComputadorMove() {

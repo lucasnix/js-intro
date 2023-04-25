@@ -24,7 +24,9 @@
 
         delete produto.novaPropriedade;
         console.log(produto.novaPropriedade); */
-
+       
+       
+        /*
         const produto2 = {
             nome: 'camiseta',
             'tempo-de-entrega': '1 dia',
@@ -50,6 +52,52 @@
 
         const jsonString = JSON.stringify(produto2);
         console.log(JSON.parse(jsonString));
+        */
+
+        console.log('hello'.length);
+        //autoboxing pega o objeto e coloca numa caixa automatica
+        console.log('hello'.toUpperCase());
+
+        const objeto1 = {
+            //isso e usado referencia para guardar no pc
+            mensagem: 'hello'
+        };
+        //isso e copiar por referencia
+        const objeto2 = objeto1;
+        //nao muda o objeto 1 de referencia mas muda o objeto 2 
+        objeto1.mensagem = 'bom trabalho!'
+        console.log(objeto1);
+        console.log(objeto2);
+
+        const objeto3 = {
+            mensagem: 'bom trabalho'
+        };
+
+        console.log(objeto3 === objeto1);
+        console.log(objeto2 === objeto1);
+
+        const objeto4 = {
+            mensagem: 'bom trabalho!',
+            preço: 799
+        }
+        //const mensagem = objeto4.mensagem;
+        const {mensagem, preço} = objeto4;
+        console.log(mensagem);
+        console.log(preço);
+        //shorthand property
+        const objeto5 = {
+            //mensagem: mensagem
+            mensagem,
+            //method: function funcao1() {
+            //    console.log('method');
+            //}
+            //shorthand method sintax
+            method() {
+                console.log('method');
+            }
+        };
+        console.log(objeto5);
+        objeto5.method();
     </script>
 </body>
 </html>
