@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedra Papel e Tesoura</title>
+    <link rel="stylesheet" href="styles/10-pedra-papel-tesoura.css">
+  </head>
+  <body>
+    <p class="title">Pedra Papel e Tesoura</p>
+    
+    <button onclick="
+      jogarGame('pedra');"
+      class="movimento-botao">
+      <img src="images/pedra-emoji.png" 
+      class="move-icon">
+    </button>
+    
+    <button onclick="
+      jogarGame('papel');"
+      class="movimento-botao">
+      <img src="images/papel-emoji.png" 
+      class="move-icon">
+    </button>
+    
+    <button onclick="
+      jogarGame('tesoura');"
+      class="movimento-botao">
+      <img src="images/tesoura-emoji.png" 
+      class="move-icon">
+    </button>
+
+    <p class="js-resultado resultado"></p>
+    <p class="js-movimentos"></p>
+    <p class="js-placar placar"></p>
+
+    <button onclick="
+      placar.ganhos = 0; 
+      placar.perdas = 0; 
+      placar.empates = 0;
+      localStorage.removeItem('placar')
+      updatePlacarElement();"
+      class="reseta-placar-botao">
+      Resetar Placar </button>
+
+    <script src="scripts/10-pedra-papel-tesoura.js"> </script>
+  </body>
+</html>

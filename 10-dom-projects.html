@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        .inscrever-botao {
+            border: none;
+            background-color: black;
+            color:white;
+            padding-top: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 10px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        .esta-inscrito {
+            background-color: rgba(240, 240, 240);
+            color: black;
+        }
+
+        .custo-input{
+            font-size: 15px;
+            padding: 10px;
+
+        }
+        .calcular-input{
+            padding: 12px 15px;
+            background-color: green;
+            color: white;
+            border: none;
+            font-weight: bold;
+            font-size: 15;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Botão de se inscrever no youtube</p>
+
+    <button onclick="
+    inscrever();
+    " class="js-botao-inscrever inscrever-botao">Inscrever</button>
+
+    <p> Calculador de frete do Amazon teste</p>
+    <input placeholder = "Custo do produto" 
+    class="js-custo-input custo-input" onkeydown="
+        seguraCustoKeydown(event);
+    ">
+
+    <button onclick="
+        calcularTotal();
+    "class = "calcular-input
+    ">Calcular</button>
+    <p class="js-preco-total"></p>
+    
+    <script>
+        //type coercion with a string to a number
+        String(25)
+        console.log('25' - 5);
+        console.log('25' + 5);
+
+        //window nao precisa ser digitado o JS ja insere isso para mexer no browser
+        window.document
+        window.console.log('window');
+        window.alert
+
+        function seguraCustoKeydown(event){
+            if (event.key === 'Enter') {
+        calcularTotal();
+        }
+    }
+
+        function calcularTotal(){
+           const inputElement = document.querySelector('.js-custo-input');
+           //ao colocar Number na string ele soma os valores.
+           let custo = Number(inputElement.value);
+           console.log(custo);
+           //transforma o numero em string pq faz TYPE COERCION, independente do valor no DOM converte numa STRING
+           console.log(typeof custo);
+
+           if (custo < 40) {
+            custo = custo + 10;
+            }
+            console.log(custo);
+
+            document.querySelector('.js-preco-total').innerHTML = `R$ ${custo}`;
+           }
+
+        function inscrever (){
+            
+        const buttonElement = document.querySelector('.js-botao-inscrever');
+        if (buttonElement.innerText === 'Inscrever') {
+            buttonElement.innerHTML = 'Inscrito';
+            buttonElement.classList.add('esta-inscrito');
+        } else {
+            buttonElement.innerHTML = 'Inscrever'
+            buttonElement.classList.remove('esta-inscrito');
+            }
+        }
+    </script>
+</body>
+</html>
