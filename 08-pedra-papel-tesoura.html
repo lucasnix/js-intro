@@ -8,11 +8,14 @@
   </head>
   <body>
     <h3>Pedra Papel e Tesoura</h3>
-    <button onclick="jogarGame('Pedra');">Pedra</button>
+    <button onclick="jogarGame('pedra');">Pedra</button>
     <button onclick="jogarGame('papel');">Papel</button>
     <button onclick="jogarGame('tesoura');">Tesoura</button>
+    <button onclick="placar.ganhos = 0; placar.perdas = 0; placar.empates = 0;">Resetar Placar</button>
 
     <script>
+      const placar = JSON.parse(localStorage.getItem ('placar'));
+
       function jogarGame(movimentoJogador) {
         const computadorMove = pegaComputadorMove();
 
@@ -43,7 +46,20 @@
             result = "Vc ganhou!";
           }
         }
-        alert(`Voce escolheu ${movimentoJogador}. Computador escolheu ${computadorMove}. ${result}`);
+
+        if (result === 'Vc ganhou!') {
+          placar.ganhos += 1;
+        } else if (result === 'Perdeu!') {
+          placar.perdas += 1;
+        } else if (result === 'Empatou!') {
+          placar.empates += 1;
+        }
+        
+
+        localStorage.setItem('placar', JSON.stringify (placar));
+
+        alert(`Voce escolheu ${movimentoJogador}. Computador escolheu ${computadorMove}. ${result}
+ganhos: ${placar.ganhos}, perdas: ${placar.perdas}, empates: ${placar.empates}`);
       }
 
       function pegaComputadorMove() {

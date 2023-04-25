@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        /*const produto = {
+            nome: 'meias',
+            preço: 1090
+        };
+        console.log(typeof produto);
+        console.log(produto.nome);
+        console.log(produto.preço);
+
+        produto.nome = 'meias de algodão';
+        console.log(produto.nome);
+
+        produto.novaPropriedade = true;
+        console.log(produto.novaPropriedade);
+
+        delete produto.novaPropriedade;
+        console.log(produto.novaPropriedade); */
+
+        const produto2 = {
+            nome: 'camiseta',
+            'tempo-de-entrega': '1 dia',
+            estrelas: {
+                estrelas: 4.5,
+                count: 87
+            },
+            fun: function(){
+                console.log('function dentro do objeto')
+            }
+        };
+        console.log(produto2);
+        console.log(produto2.nome);
+        console.log(produto2['nome']);
+        console.log(produto2['tempo-de-entrega']);
+
+        console.log(produto2.estrelas.count);
+        produto2.fun();
+
+        console.log(typeof console.log);
+
+        console.log(JSON.stringify(produto2));
+
+        const jsonString = JSON.stringify(produto2);
+        console.log(JSON.parse(jsonString));
+    </script>
+</body>
+</html>

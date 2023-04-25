@@ -18,11 +18,12 @@
         funcao1();
         */
 
-        function calculaTaxa(parametro1) {
-            console.log(parametro1 * 0.1);
+        function calculaTaxa(custo, porcentagemTaxa = 0.1) {
+            
+            console.log(custo * porcentagemTaxa);
         }
 
-        calculaTaxa(2000);
+        calculaTaxa(2000, 0.2);
         calculaTaxa(5000);
     </script>
 </body>
