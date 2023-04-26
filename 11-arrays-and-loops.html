@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Loops</title>
+</head>
+<body>
+    <script>
+        /*
+        const meuArray = [
+            10, 
+            20, 
+            30
+        ];
+        console.log(meuArray);
+
+        console.log(meuArray[0]);
+        meuArray[0] = 99;
+        console.log(meuArray);
+        
+        [1, 'oi', true, {name: 'meias'}, [1, 2]]
+        console.log(typeof [1, 2]);
+        console.log(Array.isArray([1, 2]));
+
+        console.log(meuArray.length);
+
+        meuArray.push(100);
+        console.log(meuArray);
+
+        meuArray.splice(0, 1);
+        console.log(meuArray);
+        */
+       //criar variavel i e definir que e igual a 1
+       /*
+        let i = 1;
+        //enquanto i < 5 ele faz um loop infinito
+        while (i <= 5) {
+            console.log(i);
+            i++;
+        }
+
+        for (let i = 1; i <= 5; i++) {
+            console.log(i);
+        }
+
+        let randomNumber = 0;
+
+        while (randomNumber < 0.5) {
+            randomNumber = Math.random();
+        }
+
+        console.log(randomNumber);
+        */
+        /*
+        const todoList = [
+            'fazer janta',
+            'assistir youtube',
+            'fazer compras'
+        ];
+
+        for (let i = 0; i <= todoList.length; i++) {
+             const value = todoList[i];
+            console.log(value);
+        }
+        */
+        //acummulator pattern
+        const nums = [1, 1, 3];
+        //acummulator variable  
+        let total = 0;
+
+        for (let i = 0; i < nums.length; i++) {
+            const num = nums [i];
+            total += num;
+        }
+            console.log(total);
+            //is a array
+            const numsDoubled = [];
+            //update the result
+            for (let i = 0; i < nums.length; i++) {
+                //get the number of each index
+                const num = nums[i];
+                //update the result
+                numsDoubled.push(num * 2);
+            }
+            console.log(numsDoubled);
+    </script>
+</body>
+</html>
